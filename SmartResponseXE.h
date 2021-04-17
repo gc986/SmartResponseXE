@@ -1,3 +1,7 @@
+#include <Arduino.h>
+#include <avr/pgmspace.h>
+#include <avr/sleep.h>
+
 //
 // SMART Response XE support library
 // written by Larry Bank

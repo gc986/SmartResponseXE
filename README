@@ -10,7 +10,10 @@ Features:
 Installation:
 ------------
 1) Download the library: https://github.com/bitbank2/SmartResponseXE/archive/master.zip
+
 2) (In the Arduino IDE) Sketch > Include Library > Add .ZIP Library > select the downloaded file > Open
+
+2) (In the VSCode PlatformIO) copy folder to <folder of Your project>/lib
 
 Getting Started:
 ---------------
