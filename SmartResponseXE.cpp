@@ -430,8 +430,6 @@ uint8_t val, count, len = 1;
 //
 int SRXEInit(int iCS, int iDC, int iReset)
 {
-byte uc, ucTemp[8];
-
   iCSPin = iCS;
   iDCPin = iDC;
   iResetPin = iReset;
@@ -605,7 +603,7 @@ byte bTemp[128];
 //
 int SRXEWriteString(int x, int y, char *szMsg, int iSize, int iFGColor, int iBGColor)
 {
-int i, j, iLen;
+int i, iLen;
 unsigned char ucTemp[8], *s;
 byte fgColor0, fgColor1, fgColor2, bgColor;
 
