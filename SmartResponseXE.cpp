@@ -21,6 +21,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
+
+// Copyright (c) 2021
+// written by Yazovtsev Igor
+// email: gc986@list.ru
+// Project continued 17/4/2021
+
 #include "SmartResponseXE.h"
 //#include <SPI.h>
 

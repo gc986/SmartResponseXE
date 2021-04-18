@@ -8,6 +8,12 @@
 // Copyright (C) 2018 BitBank Software, Inc.
 // Project started 8/4/2018
 //
+
+// Copyright (c) 2021
+// written by Yazovtsev Igor
+// email: gc986@list.ru
+// Project continued 17/4/2021
+
 #ifndef __SMART_RESPONSE_XE__
 #define __SMART_RESPONSE_XE__
 
