@@ -1,3 +1,9 @@
+gc986 added:
+1) SRXERectangle1 - function for drawing reatangle with size 384x160. Minimal width = 1pix. You can use actual screen size.
+2) SRXEVerticalLine1 - function for drawing horizontal line with minimal width 1pix. You can use actual screen size.
+
+>>>>>>>>>>
+
 Larry's SMART Response XE support library
 
 Features:
