@@ -546,11 +546,17 @@ void SRXEHorizontalLine(int x, int y, int length,byte color,int thickness){
       for(int i = 0; i< thickness ; i++){
         SRXEWriteDataBlock(bTemp, length);
       }
-
-
 }
 
+void SRXEHorizontalLine1(int x, int y, int length,byte color,int thickness){
+      byte bTemp[128];
 
+      SRXESetPosition(x,y,length,thickness);
+      memset(bTemp, bColorToByte[color], length);
+      for(int i = 0; i< thickness ; i++){
+        SRXEWriteDataBlock(bTemp, length);
+      }
+}
 
 void SRXEVerticalLine(int x, int y, int height,byte color){
       byte bTemp[128];
@@ -560,7 +566,13 @@ void SRXEVerticalLine(int x, int y, int height,byte color){
       SRXEWriteDataBlock(bTemp, height);
 }
 
+void SRXEVerticalLine1(int x, int y, int height,byte color){
+      byte bTemp[128];
 
+      SRXESetPosition(x,y,1, height );
+      memset(bTemp, bColorToByte[color], height);
+      SRXEWriteDataBlock(bTemp, height);
+}
 
 //
 // Draw an outline or filled rectangle
@@ -603,6 +615,48 @@ byte bTemp[128];
       SRXEWriteDataBlock(bTemp, cy);
    }
 } /* SRXERectangle() */
+
+//
+// Draw an outline or filled rectangle
+// (display is treated as 384x160)
+//
+
+void SRXERectangle1(int x, int y, int cx, int cy, byte color, byte bFilled)
+{
+byte bTemp[128];
+
+   if (x < 0 || x > 383 || y < 0 || y > 159) return;
+   if (x+cx > 383 || y+cy > 159) return;
+   if (bFilled)
+   {
+      SRXESetPosition(x, y, cx, cy);
+      for (y=0; y<cy; y++)
+      {
+         memset(bTemp, bColorToByte[color], cx);
+         SRXEWriteDataBlock(bTemp, cx);       
+      }
+   } // filled
+   else // outline
+   {
+      // Draw top part
+      SRXESetPosition(x, y, cx, 1);
+      memset(bTemp, bColorToByte[color], cx);
+      SRXEWriteDataBlock(bTemp, cx);
+      // Bottom
+      SRXESetPosition(x, y+cy-1, cx, 1);
+      memset(bTemp, bColorToByte[color], cx);
+      SRXEWriteDataBlock(bTemp, cx);
+      // Left
+      SRXESetPosition(x, y, 1, cy);
+      memset(bTemp, bColorToByte[color], cy);
+      SRXEWriteDataBlock(bTemp, cy);
+      // Right
+      SRXESetPosition((x+cx-1)*1, y, 1, cy);
+      memset(bTemp, bColorToByte[color], cy);
+      SRXEWriteDataBlock(bTemp, cy);
+   }
+} /* SRXERectangle() */
+
 //
 // Draw a string of normal (8x8), small (6x8) or large (16x24) characters
 // At the given col+row

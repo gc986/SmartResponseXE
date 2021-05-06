@@ -83,12 +83,16 @@ void SRXEScrollReset(void);
 void SRXEHorizontalLine(int x, int y, int length,byte color,int thickness);
 void SRXEVerticalLine(int x, int y, int height,byte color);
 
+void SRXEHorizontalLine1(int x, int y, int length,byte color,int thickness);
+void SRXEVerticalLine1(int x, int y, int height,byte color);
+
 //
 // Draw an outline or filled rectangle
 // Only draws on byte boundaries (3 pixels wide)
 // (display is treated as 128x136)
 //
 void SRXERectangle(int x, int y, int cx, int cy, byte color, byte bFilled);
+void SRXERectangle1(int x, int y, int cx, int cy, byte color, byte bFilled);
 //
 // Draw a string of normal (9x8), small (6x8) or large (15x16) characters
 // At the given col+row
