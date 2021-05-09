@@ -618,12 +618,12 @@ byte bTemp[128];
 
 //
 // Draw an outline or filled rectangle
-// (display is treated as 384x160)
+// (display is treated as 384x136)
 //
 
 void SRXERectangle1(int x, int y, int cx, int cy, byte color, byte bFilled)
 {
-byte bTemp[128];
+byte bTemp[384];
 
    if (x < 0 || x > 383 || y < 0 || y > 159) return;
    if (x+cx > 383 || y+cy > 159) return;
